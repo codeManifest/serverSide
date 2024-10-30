@@ -14,7 +14,7 @@ app.use(cors(
     origin='http://localhost:3000/',
     origin='http://localhost:3001/',
 ))
-// hello
+
 const port = process.env.PORT || 4001;
 const mongo_uri = process.env.MONGO_URI
 
@@ -39,8 +39,11 @@ app.use(bodyParser.json())
 
 const userRoute=require('./routes/userRoutes')
 const student_route=require('./routes/student_Routes')
+// const indevisualStudent = require('./routes/indevisualStudent')
+
 app.use('/api/users',userRoute)
 app.use('/api/student', student_route)
+// app.use('/api/student', indevisualStudent)
 
 
 app.get('/', (req, res) => {
